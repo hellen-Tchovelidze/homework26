@@ -8,11 +8,11 @@ async function SaleControl() {
     let data = await Sale.json();
     let productInfo = document.createElement("p");
     productInfo.textContent = `Product Name: ${data.title}, Price: $${data.price}`;
-    button.appendChild(productInfo);
+    document.body.appendChild(productInfo);
     productId++;
   } catch (error) {
     let errorMessage = document.createElement("p");
-    errorMessage.textContent = `არასწორი ღილაკი`;
+    errorMessage.textContent = `პროდუქტის ლიმიტი ამოიწურა`;
     productContainer.appendChild(errorMessage);
   }
 }
